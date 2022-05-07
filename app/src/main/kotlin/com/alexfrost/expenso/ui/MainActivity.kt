@@ -1,4 +1,4 @@
-package com.alexfrost.expenson
+package com.alexfrost.expenso.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,19 +10,19 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.alexfrost.expenson.ui.theme.ExpensonTheme
+import com.alexfrost.expenso.ui.theme.ExpensoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ExpensonTheme {
+            ExpensoTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    Greeting("Android 1")
                 }
             }
         }
@@ -37,7 +37,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ExpensonTheme {
+    ExpensoTheme {
         Greeting("Android")
     }
 }

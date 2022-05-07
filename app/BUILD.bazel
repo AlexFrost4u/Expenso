@@ -1,0 +1,43 @@
+load("@io_bazel_rules_kotlin//kotlin:android.bzl", "kt_android_library")
+load("@rules_android//android:rules.bzl", "android_binary")
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+kt_android_library(
+    name = "app-lib",
+    srcs = glob(["src/main/kotlin/**/*.kt"]),
+    custom_package = "com.alexfrost.expenso",
+    manifest = "src/main/AndroidManifest.xml",
+    plugins = ["//:jetpack_compose_compiler_plugin"],
+    resource_files = glob(["src/main/res/**"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        artifact("org.jetbrains.kotlin:kotlin-stdlib"),
+        artifact("androidx.core:core-ktx"),
+        artifact("androidx.compose.animation:animation"),
+        artifact("androidx.compose.foundation:foundation"),
+        artifact("androidx.compose.ui:ui"),
+        artifact("androidx.compose.material:material"),
+        artifact("androidx.compose.ui:ui-tooling"),
+        artifact("androidx.compose.ui:ui-tooling-preview"),
+        artifact("androidx.lifecycle:lifecycle-runtime-ktx"),
+        artifact("androidx.activity:activity-compose"),
+        artifact("androidx.compose.runtime:runtime"),
+    ],
+)
+
+android_binary(
+    name = "bin",
+    custom_package = "com.alexfrost.expenso",
+    dex_shards = 10,
+    incremental_dexing = 1,
+    manifest = "src/main/AndroidManifest.xml",
+    manifest_values = {
+        "minSdkVersion": "26",
+        "targetSdkVersion": "31",
+        "versionCode": "1",
+        "versionName": "1.0",
+    },
+    multidex = "native",
+    visibility = ["//visibility:public"],
+    deps = [":app-lib"],
+)

@@ -1,4 +1,4 @@
-package com.alexfrost.expenson.ui.theme
+package com.alexfrost.expenso.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
