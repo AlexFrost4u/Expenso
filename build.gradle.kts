@@ -11,6 +11,9 @@ plugins {
     kotlin(Plugins.android) version Version.kotlin apply false
     id(Plugins.androidApplication) version Version.androidGradle apply false
     id(Plugins.androidLibrary) version Version.androidGradle apply false
+    /**
+     * Remove the hardcoded plugins added below when creating a new module to avoid build errors.
+     */
 }
 
 // all projects = root project + sub projects

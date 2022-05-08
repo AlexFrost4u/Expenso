@@ -25,3 +25,9 @@ rootProject.name = "expenso"
 
 // App module
 include(":app")
+
+// Core modules
+include(
+    ":core:common",
+    ":core:ui"
+)
