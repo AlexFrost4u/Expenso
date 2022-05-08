@@ -1,4 +1,4 @@
-package com.alexfrost.expenso.ui.theme
+package com.alexfrost.expenso.core.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

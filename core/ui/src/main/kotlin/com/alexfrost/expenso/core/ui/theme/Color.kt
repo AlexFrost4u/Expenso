@@ -1,6 +1,6 @@
 @file:Suppress("detekt.MagicNumber")
 
-package com.alexfrost.expenso.ui.theme
+package com.alexfrost.expenso.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
