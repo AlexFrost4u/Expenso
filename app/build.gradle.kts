@@ -69,6 +69,4 @@ dependencies {
 
     implementation(Dependency.Loggers.timber)
     implementation(Dependency.Loggers.prettyLogger)
-
-    implementation(Dependency.Other.mviOrbit)
 }
