@@ -46,6 +46,8 @@ android {
 
 dependencies {
     // Function modules
+    implementation(project(ModuleDependency.Core.common))
+    implementation(project(ModuleDependency.Core.ui))
 
     // Libraries
     implementation(Dependency.AndroidX.core)
